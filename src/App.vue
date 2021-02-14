@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="content">
+    <div class="content pb-5">
       <Header />
       <router-view/>
     </div>
@@ -19,7 +19,7 @@ export default {
     components: {
     Header,
     Footer
-  }
+  }  
 }
 </script>
 
@@ -32,8 +32,9 @@ export default {
 html, body{
   height: 100%;
 }
-.content{
+
+#app{
   min-height: 100%;
-  margin-bottom: -50px;
+  position: relative;
 }
 </style>

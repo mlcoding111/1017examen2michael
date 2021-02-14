@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="footer mt-5">
     <h6>Examen VueJS Michael Lacroix</h6>
   </footer>
 
@@ -18,6 +18,7 @@ export default {
       align-items: center;
       position: absolute;
       bottom: 0;
+      left: 0;
       width: 100%;
       height: 60px;   /* Height of the footer */
       background:rgb(51, 51, 51);

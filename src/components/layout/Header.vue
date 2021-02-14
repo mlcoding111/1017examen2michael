@@ -1,5 +1,7 @@
 <template>
-    <nav>
+    <!-- 
+      Old nav with logo
+      <nav>
         <ul id="nav">
         <div>
             <li>
@@ -14,19 +16,53 @@
         </li>
         <div>
             <li>
-            <router-link to="/login">Login</router-link>
+            <router-link to="/contact">Contact</router-link>
             </li>
             <li>
             <router-link to="/projets">Projets</router-link>
             </li>
         </div>
         </ul>
-  </nav>
+    </nav> -->
+    <nav>
+        <ul id="nav" class="text-white">
+          <li v-for="item in menu" v-bind:key="item.id">            
+            <router-link :to="item.route">{{item.titre}}</router-link>      
+          </li>
+        </ul>
+    </nav>
 </template>
 
 <script>
 export default {
-    name: "Header"
+    name: "Header",
+    data(){
+      return{
+        menu: [
+          {
+            id: 0,
+            route: "/",
+            titre: "Accueil"
+          },
+           {
+            id: 1,
+            route: "/contact",
+            titre: "Contact"
+          },
+          {
+            id: 2,
+            route: "/projets",
+            titre: "Projets"
+          },
+           {
+            id: 3,
+            route: "/about",
+            titre: "A propos"
+          },
+          
+        ]
+      }
+    }
 }
 </script>
 

@@ -1,17 +1,32 @@
 <template>
   <div class="home">
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <component v-bind:is="component"></component>
   </div>
+  
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
+import HomeLoggedIn from '../components/HomeLoggedIn'
+import HomeNotLogged from '../components/HomeNotLogged'
 
 export default {
   name: 'Home',
   components: {
-    // HelloWorld
+    HomeLoggedIn,
+    HomeNotLogged
+  },
+  data(){
+    return{
+        component: 'HomeNotLogged',
+        loggedIn: true
+    }
+  },
+  created(){
+    if(!this.loggedIn){
+      this.component = "HomeNotLogged"
+    }else{
+      this.component = "HomeLoggedIn"
+    }
   }
 }
 </script>
