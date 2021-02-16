@@ -1,25 +1,12 @@
-# mlweb
+# MLWeb
 
-## Project setup
-```
-npm install
-```
+Session Automne 2020 <br>
+Intégration d'interface utilisateur <br>
+Examen #2 VueJs <br>
 
-### Compiles and hot-reloads for development
+## Commandes pour créer l'application
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+vue create mlweb
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
 # 1017examen2michaellacroix
