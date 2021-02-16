@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="content pb-5">
-      <Header />
+      <Header :locale="this.locale"/>
       <router-view/>
     </div>
     <Footer />   
@@ -16,6 +16,11 @@ import Footer from './components/layout/Footer.vue';
 
 export default {
     name: "app",
+    data: function(){
+      return{
+        locale: "EN",
+      }
+    },
     components: {
     Header,
     Footer

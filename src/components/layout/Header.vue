@@ -27,7 +27,14 @@
     <nav>
         <ul id="nav" class="text-white">
           <li v-for="item in menu" v-bind:key="item.id">            
-            <router-link :to="item.route">{{item.titre}}</router-link>      
+            <router-link :to="item.route">{{ item.titre | translate(locale)}}</router-link>      
+          </li>
+          <li>
+               <label class="switch mt-3" >
+                  <input type="checkbox" v-on:click="toggleLanguage()"/>
+                  <span class="slider round"></span>        
+                </label>
+                <h5 class="ml-3">{{locale}}</h5>
           </li>
         </ul>
     </nav>
@@ -38,29 +45,38 @@ import { TRANSLATIONS } from "../../mixins/translateMixin";
 export default {
     mixins: [TRANSLATIONS],
     name: "Header",
+      methods: {
+      toggleLanguage() {
+        if(this.locale === "EN"){
+            this.locale = "FR"
+        }else{
+            this.locale = "EN"
+        }
+      },
+  },
     data(){
       return{
-        locale: "fr",
+        locale: "EN",
         menu: [
           {
             id: 0,
             route: "/",
-            titre: "Accueil"
+            titre: "home"
           },
            {
             id: 1,
             route: "/contact",
-            titre: "Contact"
+            titre: "contact"
           },
           {
             id: 2,
             route: "/projets",
-            titre: "Projets"
+            titre: "projets"
           },
            {
             id: 3,
             route: "/about",
-            titre: "A propos"
+            titre: "bug"
           },
           
         ]

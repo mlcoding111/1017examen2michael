@@ -4,13 +4,14 @@
   >
     <!-- Rounded switch -->
     <form class="shadow-lg">
-      <h2>{{ form.titre }}</h2>
+      <h2>{{ 'contactTitle'| translate(locale)}}</h2>
       <hr>
       <!-- Rounded switch -->
       <label class="switch mt-3" >
-        <input type="checkbox" v-on:click="toggleLanguage(), translate()"/>
-        <span class="slider round"></span>
+        <input type="checkbox" v-on:click="toggleLanguage()"/>
+        <span class="slider round"></span>        
       </label>
+
       <h5>{{ locale }}</h5>
       <div></div>
       <div class="form-row my-5">
@@ -18,16 +19,17 @@
           <input
             type="text"
             class="form-control"
-            :placeholder="placeholder.lastName"
-            v-model="form.nom"
+            :placeholder="'firstName' | translate(locale)"
+            v-model="form.firstName"
           />
         </div>
         <div class="col">
           <input
             type="text"
             class="form-control"
-            :placeholder="placeholder.firstName"
+            :placeholder="'lastName' | translate(locale)"
             v-model="form.prenom"
+            v-bind:firstName="placeholder.firstName | translate(locale)"
           />
         </div>
       </div>
@@ -36,7 +38,7 @@
           <input
             type="email"
             class="form-control"
-            :placeholder="placeholder.email"
+            :placeholder="'email' | translate(locale)"
             v-model="form.courriel"
           />
         </div>
@@ -46,12 +48,12 @@
               v-for="(option, index) in form.categories"
               v-bind:key="index"
             >
-              {{ option }}
+              {{ option | translate(locale) }}
             </option>
           </select>
         </div>
       </div>
-      <button type="submit" class="btn btn-dark">{{form.btnTxt}}</button>
+      <button type="submit" class="btn btn-dark">{{'submit' | translate(locale)}}</button>
     </form>
   </div>
 </template>
@@ -72,9 +74,9 @@ export default {
   },
   data: function() {
     return {
-      placeholder: {
-        lastName: "Nom",
-        firstName: "Prénom",
+        placeholder: {
+        lastName: "lastName",
+        firstName: "firstName",
         email: "Courriel",
       },
       form: {
@@ -82,11 +84,11 @@ export default {
         nom: "",
         prenom: "",
         courriel: "",
-        categories: ["Veuillez choisir..", "Soutien", "Feedback", "Bug"],
+        categories: ["choisir", "soutien", "feedback", "bug"],
         btnTxt: "Soumettre"
       },
       selectedOption: null,
-      locale: "FR",
+      locale: "EN",
     };
   },
 };
@@ -166,3 +168,4 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 </style>
+
