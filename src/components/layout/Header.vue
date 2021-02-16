@@ -34,10 +34,13 @@
 </template>
 
 <script>
+import { TRANSLATIONS } from "../../mixins/translateMixin";
 export default {
+    mixins: [TRANSLATIONS],
     name: "Header",
     data(){
       return{
+        locale: "fr",
         menu: [
           {
             id: 0,

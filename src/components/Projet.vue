@@ -9,8 +9,7 @@
              <hr>
              <h5 class="card-title">{{project.titre}}</h5>
             <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              {{project.description}}
             </p>
             <a :href="project.url" target="_blank"><button type="button" class="btn btn-danger">Visiter le site</button></a>
           </div>

@@ -1,7 +1,13 @@
 <template>
-  <div class="container content" id="homeContent">    
-    <!-- First row -->
+  <div class="container content" id="homeContent"> 
     <div class="row">
+      <div class="col-12 d-flex justify-content-center mb-5">
+          <img src="../assets/MLWeb_black.png">  
+      </div> 
+    </div>
+
+    <!-- First row -->
+    <div class="row mt-5">
       <div class="col-6">
         <div class="card">
           <div class="card-body">
@@ -72,7 +78,7 @@ export default {
   color: white;
 }
 #homeContent{
-  margin-top: 7%;
+  margin-top: 5%;
 }
 
 .card{

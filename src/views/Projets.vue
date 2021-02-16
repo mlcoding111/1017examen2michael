@@ -25,18 +25,21 @@ export default {
           url: "http://leplana.ca",
           titre: "Plan A",
           imgSrc: "https://i.imgur.com/US6I3hB.jpg",
+          description: "Site web d'une compagnie privé qui offre le service de réparation de téléphone mobile"
         },
         {
           id: 1,
           url: "http://ladeko.ca",
           titre: "Ladeko",
           imgSrc: "https://i.imgur.com/ruYWGlZ.jpg",
+          description: "Site web d'une nouvelle designer qui offre des produits différents faits a la main"
         },
         {
           id: 2,
           url: "http://mlweb.info/#/",
           titre: "Portfolio React",
           imgSrc: "https://wallpaperaccess.com/full/3949076.jpg",
+          description: "Portfolio réalisé avec le framework React"
         },
       ],
     };
