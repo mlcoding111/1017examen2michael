@@ -1,6 +1,6 @@
 <template>
   <footer class="footer mt-5">
-    <h6 v-footer-content></h6>
+    <h6 v-footer-content="'MLWeb'"></h6>
   </footer>
 
 </template>

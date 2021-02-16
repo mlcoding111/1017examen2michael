@@ -8,10 +8,7 @@ Vue.directive("footer-content", {
   bind(el, binding) {
     let today = new Date();
     today = today.getFullYear();
-    let footerTxt = `Copyright © ${today} Quebec Inc. - MLWeb - All Rights Reserved`
-    if (binding.value == "wide") {
-      console.log(today);
-    }
+    let footerTxt = `Copyright © ${today} Quebec Inc. - ${binding.value} - All Rights Reserved`
     el.textContent = footerTxt
   },
 });
