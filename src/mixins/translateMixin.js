@@ -52,8 +52,7 @@ export const TRANSLATIONS = {
     },   
     created(){        
         this.translate();
-     },
-  
+     },  
 };
 
 
