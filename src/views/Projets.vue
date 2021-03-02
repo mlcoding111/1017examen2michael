@@ -1,7 +1,9 @@
 <template>
   <div class="container projects-wrapper p-5 my-5">
     <h1>Liste de projets</h1>
+    <hr>
     <div class="row mt-5">
+      <!-- On parcourt les données stocker dans la liste d'objet : projects , pour générer la liste des projets -->
       <div class="col-6 my-3" v-for="project in projects" v-bind:key="project.id">
         <Projet v-bind:project="project" />
       </div>
@@ -19,6 +21,7 @@ export default {
   },
   data() {
     return {
+      // Liste qui contient les données des projets
       projects: [
         {
           id: 0,

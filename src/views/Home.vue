@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <!-- C'est ici qu'on doit s'assurrer que le bon composant s'affiche en conséquence de de la varialbe loggedIn -->
     <component v-bind:is="component"></component>
   </div>
   
@@ -22,6 +23,7 @@ export default {
     }
   },
   created(){
+    // Si l'utilisateur est connecté, on doit retourner le bon composant
     if(!this.loggedIn){
       this.component = "HomeNotLogged"
     }else{

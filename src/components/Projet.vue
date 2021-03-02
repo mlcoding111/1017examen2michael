@@ -1,4 +1,5 @@
 <template>   
+ <!-- On va chercher les éléments venants du props "Project" qui contient le contenu des projets -->
         <div class="card border-black">
           <img
             class="card-img-top"
@@ -6,8 +7,8 @@
             alt="Card image cap"
           />
           <div class="card-body">
-             <hr>
              <h5 class="card-title">{{project.titre}}</h5>
+             <hr>
             <p class="card-text">
               {{project.description}}
             </p>

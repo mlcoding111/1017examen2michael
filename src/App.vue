@@ -21,6 +21,9 @@ export default {
         locale: "EN",
       }
     },
+    created(){
+      
+    },
     components: {
     Header,
     Footer

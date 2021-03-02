@@ -1,3 +1,4 @@
+ <!-- Ce composant va s'afficher seulement si l'utlisateur n'est pas connecté -->
 <template>
 <div class="row mt-5">
     <div class="col-12 d-flex justify-content-center align-items-center">

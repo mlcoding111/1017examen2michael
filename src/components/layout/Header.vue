@@ -26,6 +26,7 @@
     </nav> -->
     <nav>
         <ul id="nav" class="text-white">
+           <!-- On parcourt la liste d'objet Menu qui contient les routes pour la navigation -->
           <li v-for="item in menu" v-bind:key="item.id">            
             <router-link :to="item.route">{{ item.titre | translate(locale)}}</router-link>      
           </li>
@@ -41,9 +42,9 @@
 </template>
 
 <script>
-import { TRANSLATIONS } from "../../mixins/translateMixin";
+import {TranslateMixin} from '../../mixins/translateMixin'
 export default {
-    mixins: [TRANSLATIONS],
+    mixins: [TranslateMixin],
     name: "Header",
       methods: {
       toggleLanguage() {
@@ -76,7 +77,7 @@ export default {
            {
             id: 3,
             route: "/about",
-            titre: "bug"
+            titre: "apropos"
           },
           
         ]

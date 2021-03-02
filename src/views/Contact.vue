@@ -2,11 +2,11 @@
   <div
     class="container-fluid contact-wrapper d-flex justify-content-center align-items-center"
   >
-    <!-- Rounded switch -->
+
     <form class="shadow-lg">
       <h2>{{ 'contactTitle'| translate(locale)}}</h2>
       <hr>
-      <!-- Rounded switch -->
+      <!-- Le bouton pour changer la langue de Francais a Anglais -->
       <label class="switch mt-3" >
         <input type="checkbox" v-on:click="toggleLanguage()"/>
         <span class="slider round"></span>        
@@ -14,6 +14,7 @@
 
       <h5>{{ locale }}</h5>
       <div></div>
+         <!-- Contact form -->
       <div class="form-row my-5">
         <div class="col">
           <input
@@ -53,25 +54,27 @@
           </select>
         </div>
       </div>
-      <button type="submit" class="btn btn-dark">{{'submit' | translate(locale)}}</button>
+      <button type="submit" class="btn btn-dark" id="submitBtn">{{'submit' | translate(locale)}}</button>
     </form>
   </div>
 </template>
 
 <script>
-import { TRANSLATIONS } from "../mixins/translateMixin";
+import {TranslateMixin} from '../mixins/translateMixin'
 export default {
-  mixins: [TRANSLATIONS],
+  mixins: [TranslateMixin],
   name: "Contact",
   methods: {
+      // Fonction qui permet de changer la variable locale lorsque l'utilisateur clique sur le bouton
       toggleLanguage() {
         if(this.locale === "EN"){
             this.locale = "FR"
         }else{
             this.locale = "EN"
         }
-      },
+      }
   },
+    // Data qui sont binder au formulaire pour stocker les informations entrées
   data: function() {
     return {
         placeholder: {

@@ -1,8 +1,8 @@
 <template>
   <footer class="footer mt-5">
+    <!-- On utilise la directive pour générer le contenu du footer -->
     <h6 v-footer-content="'MLWeb'"></h6>
   </footer>
-
 </template>
 
 <script>
